@@ -21,12 +21,6 @@ pipeline {
       steps {
         sh 'npm run ng -- build'
       }
-    }  
-    
-   stage('Test') {
-      steps {
-         sh 'npm test'
-      }
     }      
   }
 }
