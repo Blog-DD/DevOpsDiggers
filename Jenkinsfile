@@ -1,14 +1,26 @@
 pipeline {
   agent any
+    
+  tools {nodejs "node"}
+    
   stages {
-    stage('Checkout') {
+        
+    stage('Cloning Git') {
       steps {
-        echo 'Checkout master branch'
-        checkout scm
-        dir('webapp') {
-          sh 'npm install'
-        }
+        git 'https://github.com/gustavoapolinario/node-todo-frontend'
       }
     }
+        
+    stage('Install dependencies') {
+      steps {
+        sh 'npm install'
+      }
+    }
+     
+    stage('Test') {
+      steps {
+         sh 'npm test'
+      }
+    }      
   }
 }
