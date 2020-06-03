@@ -21,6 +21,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'npm run ng -- build'
+        sh 'http-server'
       }
     }      
   }
