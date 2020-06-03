@@ -21,7 +21,7 @@ pipeline {
     stage('Build') {
       steps {
         sh 'npm run ng -- build'
-        sh "httpd-server ./dist"
+        sh "http-server ./dist"
       }
     }      
   }
