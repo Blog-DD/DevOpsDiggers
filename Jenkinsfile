@@ -14,12 +14,14 @@ pipeline {
     stage('Install dependencies') {
       steps {
         sh 'npm install'
+        sh "npm install http-server -g"
       }
     }
     
     stage('Build') {
       steps {
         sh 'npm run ng -- build'
+        sh "httpd-server ./dist"
       }
     }      
   }
