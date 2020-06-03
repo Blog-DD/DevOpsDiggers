@@ -14,6 +14,7 @@ pipeline {
     stage('Install dependencies') {
       steps {
         sh 'npm install'
+        sh  "npm install http-server -g"
       }
     }
     
