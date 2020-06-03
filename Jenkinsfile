@@ -20,8 +20,8 @@ pipeline {
     
     stage('Build') {
       steps {
-        sh 'npm run ng -- build'
-        sh 'http-server index.html -p 9000'
+        sh 'npm start'
+        
       }
     }      
   }
